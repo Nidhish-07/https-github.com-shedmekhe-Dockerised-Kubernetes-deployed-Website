@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: static-webpage-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: static-webpage
+  template:
+    metadata:
+      labels:
+        app: static-webpage
+    spec:
+      containers:
+      - name: static-webpage-container
+        image: mayursdocker10/asptl_img
+        ports:
+        - containerPort: 3000
